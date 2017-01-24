@@ -1,6 +1,6 @@
 from player import *
 #Testing update
-#Test update 2
+#Test update 21
 class Game():
     def __init__(self):
         self.backgroundColor = WHITE
