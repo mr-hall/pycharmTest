@@ -1,6 +1,5 @@
 import pygame
-from constants import *
-
+import colours
 
 class Player(pygame.sprite.Sprite):
     ya = 0
@@ -8,7 +7,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("Graphics/PNG/playerShip1_blue.png").convert()
-        self.image.set_colorkey(BLACK)
+        self.image.set_colorkey(colours.BLACK)
         self.rect = self.image.get_rect()
         self.rect.x = 100
         self.rect.y = 100
