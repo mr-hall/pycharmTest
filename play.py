@@ -4,7 +4,8 @@ from player import Player
 
 
 class Play():
-    def __init__(self):
+    def __init__(self, game):
+        self.game = game
         self.backgroundColor = colours.WHITE
         self.sprites = pygame.sprite.Group()
         self.player = Player()
@@ -13,6 +14,7 @@ class Play():
             pygame.K_UP: self.player.up,
             pygame.K_DOWN: self.player.down
         }
+
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -30,7 +32,7 @@ class Play():
     def draw(self, screen):
         screen.fill(self.backgroundColor)
         self.sprites.draw(screen)
-        pygame.display.flip()
+
 
     def main():
        None

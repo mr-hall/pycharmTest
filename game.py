@@ -1,7 +1,9 @@
 """Test of pygame"""
 
 import pygame, sys
-from play import *
+from menus import MainMenu
+from play import Play
+
 
 __version__= "0.1"
 __author__="G Hall"
@@ -14,16 +16,20 @@ CAPTION = "Mr Hall's Game"
 
 class Game():
     def __init__(self):
-       self.play = Play()
+        self.states = {
+            "main": MainMenu(self),
+            'play': Play(self)
+        }
+        self.currentState = self.states["main"]
 
     def handle_events(self):
-        return self.play.handle_events()
+        return self.currentState.handle_events()
 
     def update(self):
-        self.play.update()
+        self.currentState.update()
 
     def draw(self, screen):
-       self.play.draw(screen)
+       self.currentState.draw(screen)
 
     def main(self):
         done = False
@@ -32,6 +38,7 @@ class Game():
             done = game.handle_events()
             game.update()
             game.draw(screen)
+            pygame.display.flip()
             clock.tick(FPS)
 
 if __name__ == "__main__":

@@ -22,6 +22,8 @@ class Player(pygame.sprite.Sprite):
         else:
             self.ya = 0
 
+
+
     def down(self,keytype):
         if keytype == pygame.KEYDOWN:
             self.ya = 1
