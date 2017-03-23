@@ -8,6 +8,7 @@ from play import Play
 __version__= "0.1"
 __author__="G Hall"
 
+# Testing on new pycharm
 # Game Constants
 FPS = 60
 SCREEN_WIDTH = 500
