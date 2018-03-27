@@ -1,9 +1,10 @@
 import colours
 import pygame
 from player import Player
+from tools import State
 
 
-class Play():
+class Play(State):
     def __init__(self, game):
         self.game = game
         self.backgroundColor = colours.WHITE
@@ -29,7 +30,7 @@ class Play():
     def update(self):
         self.sprites.update()
 
-    def draw(self, screen):
+    def render(self, screen):
         screen.fill(self.backgroundColor)
         self.sprites.draw(screen)
 
